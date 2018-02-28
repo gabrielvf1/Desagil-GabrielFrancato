@@ -16,7 +16,14 @@ public class TextFileReadingExample1 {
             int character;
  
             while ((character = reader.read()) != -1) {
-                System.out.print((char) character);
+                if ((char) character == '#'){
+                	System.out.print("X");
+                }
+                if ((char) character != '#') {
+                	System.out.print((char) character);
+                }
+                
+                	
             }
             reader.close();
  
