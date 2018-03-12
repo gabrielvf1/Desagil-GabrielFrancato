@@ -1,6 +1,7 @@
 package br.pro.hashi.ensino.desagil.tequilada;
 
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 // Estrutura básica de um programa Java.
 public class Tequilada {
@@ -17,7 +18,7 @@ public class Tequilada {
             	View view = new View(model);
 
             	// Constrói o controlador.
-            	Controller controller = new Controller();
+            	Controller controller = new Controller(model, view);
 
             	// Constrói a janela.
             	JFrame frame = new JFrame();
@@ -36,6 +37,12 @@ public class Tequilada {
 
             	// Exibe a janela.
             	frame.setVisible(true);
+
+            	// Cria o relogio
+            	Timer timer = new Timer(1000, controller);
+
+            	// Inicia o relogio
+            	timer.start();
             }
         });
 	}
